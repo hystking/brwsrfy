@@ -1,0 +1,35 @@
+//encoding
+meta(charset="utf-8")
+
+//title
+title= title
+meta(name="keywords", content="#{keywords}")
+meta(name="description", content="#{description}")
+
+//meta share
+meta(property="og:title", content="#{title}")
+meta(property="og:type", content="website")
+meta(property="og:url", content="#{siteUrl}")
+meta(property="og:description", content="#{description}")
+meta(property="og:image", content="#{siteUrl}ogp.jpg")
+meta(property="og:site_name", content="#{title}")
+
+//ie setting
+meta(http-equiv="X-UA-Compatible", content="IE=Edge,chrome=1")
+
+//favicon
+link(rel="shortcut icon", type="image/vnd.microsoft.icon", href="/favicon.ico")
+
+//time stamp
+- var ts = parseInt(+new Date());
+
+//style sheets
+link(href="css/style.css?#{ts}", rel="stylesheet")
+
+//scripts
+script(src="js/lib/html5shiv.min.js")
+script(src="js/lib/jquery-1.11.0.min.js")
+script(src="js/app.js?#{ts}")
+
+//viewport
+//meta(name="viewport", content="initial-scale=1.0, width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0")

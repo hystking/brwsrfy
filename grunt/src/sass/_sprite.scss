@@ -1,0 +1,30 @@
+@include loadSpriteAll(
+  "smily", "*.png",
+  "spr-smily-background",
+  $scale: 0.5,
+  $animation: true,
+  $duration: 0.02s
+);
+@include loadSpriteAll(
+  "smily", "*.png",
+  "spr-smily-translate",
+  $scale: 0.5,
+  $animation: true,
+  $nest: true,
+  $inner: ".inner",
+  $spacing: 42px,
+  $duration: 0.02s
+);
+
+@include keyframes(anim-rotate){
+  0%{@include transform(rotate(0deg))}
+  100%{@include transform(rotate(360deg))}
+}
+
+.smily-wrapper{
+  @include animation(5s, anim-rotate, ease);
+  position: absolute;
+  width: 100px * 0.5;
+  height: 100px * 0.5;
+  //display: inline-block;
+}
