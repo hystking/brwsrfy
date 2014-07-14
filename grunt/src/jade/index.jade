@@ -3,10 +3,18 @@ doctype
 html
   head
     include _head
+    //time stamp
+    - var ts = parseInt(+new Date());
+    //style sheets
+    link(href="css/style.css?#{ts}", rel="stylesheet")
+    //scripts
+    script(src="js/lib/html5shiv.min.js")
+    script(src="js/lib/jquery-1.11.0.min.js")
+    script(src="js/app.js?#{ts}")
+    //viewport
+    //meta(name="viewport", content="initial-scale=1.0, width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0")
   body
     #wrapper.wrapper
-      header#header
+      header#header.page
         include section/_header
-      section#top.page
-        include section/_top
-      include _social_roots
+    include _social_roots

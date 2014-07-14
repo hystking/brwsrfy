@@ -1,26 +1,29 @@
 @mixin replaceImage($path, $scale: 1){
-  $width: image-width($path) * $scale;
-  $height: image-height($path) * $scale;
-  display: block;
-  background: image-url($path) no-repeat;
-  @include background-size($width, $height);
+  @include backgroundImage($path, $scale);
+  $width: _getImageWidth($path, $scale);
+  $height: _getImageHeight($path, $scale);
   width: $width;
   height: $height;
   text-indent: -9999px;
 }
 
 @mixin backgroundImage($path, $scale: 1){
-  $width: image-width($path) * $scale;
-  $height: image-height($path) * $scale;
+  $width: _getImageWidth($path, $scale);
+  $height: _getImageHeight($path, $scale);
   background: image-url($path);
   @include background-size($width, $height);
 }
 
 @mixin loadSpriteAll(
     $dir, $reg, $sprName,
-    $scale: 1, $dummy: false, $nest: false, $animation: false, $duration: 1s, $inner: "&:before", $spacing: 1px){
+    $scale: 1,
+    $spacing: 1px,
+    $dummy: false,
+    $nest: false, $inner: "&:before",
+    $animation: false, $duration: 1s
+    ){
   @if ($dummy == true){
-    @include _loadSpriteAllDummy($dir, $sprName, $scale, $animation);
+    @include _loadSpriteAllDummy($dir, $sprName, $scale, $animation, $duration);
   } @else {
     $spr: sprite-map("#{$dir}/#{$reg}", $spacing: $spacing, $layout: horizontal);
     @if ($nest == true) {
@@ -31,10 +34,18 @@
   }
 }
 
+@function _getImageWidth($image, $scale){
+  @return ceil(image-width($image) * $scale);
+}
+@function _getImageHeight($image, $scale){
+  @return ceil(image-height($image) * $scale);
+}
+
 @mixin _loadSprite($spr, $name, $scale){
   $sprPath: sprite-path($spr);
-  $width: ceil((image-width(sprite-file($spr, $name))) * $scale);
-  $height: ceil((image-height(sprite-file($spr, $name))) * $scale);
+  $image: sprite-file($spr, $name);
+  $width: _getImageWidth($image, $scale);
+  $height: _getImageHeight($image, $scale);
   $pos: sprite-position($spr, $name);
   $left: floor(nth($pos, 1) * $scale);
   $top: floor(nth($pos, 2) * $scale);
@@ -45,8 +56,9 @@
 
 @mixin _loadSpriteTransform($spr, $name, $scale){
   $sprPath: sprite-path($spr);
-  $width: ceil((image-width(sprite-file($spr, $name))) * $scale);
-  $height: ceil((image-height(sprite-file($spr, $name))) * $scale);
+  $image: sprite-file($spr, $name);
+  $width: _getImageWidth($image, $scale);
+  $height: _getImageHeight($image, $scale);
   $pos: sprite-position($spr, $name);
   $left: floor(nth($pos, 1) * $scale);
   $top: floor(nth($pos, 2) * $scale);
@@ -56,8 +68,8 @@
 @mixin _loadSpriteAll($spr, $sprName, $scale, $animation, $duration){
   $sprImage: sprite-url($spr);
   $sprPath: sprite-path($spr);
-  $sprWidth: ceil(image-width($sprPath) * $scale);
-  $sprHeight: ceil(image-height($sprPath) * $scale);
+  $sprWidth: _getImageWidth($sprPath, $scale);
+  $sprHeight: _getImageHeight($sprPath, $scale);
   .#{$sprName}{
     background:image-url($sprPath) no-repeat;
     background-repeat: no-repeat;
@@ -65,28 +77,27 @@
     display: block;
     text-indent: -9999px;
   }
-  $n: 0;
-  $width: 0px;
-  $height: 0px;
-  @each $fileName in sprite-names($spr){
-    .#{$sprName}.#{$fileName}{
-      $width: ceil((image-width(sprite-file($spr, $fileName))) * $scale);
-      $height: ceil((image-height(sprite-file($spr, $fileName))) * $scale);
-      @include _loadSprite($spr, $fileName, $scale);
+  $names: sprite-names($spr);
+  @each $name in $names{
+    .#{$sprName}.#{$name}{
+      @include _loadSprite($spr, $name, $scale);
     }
-    $n: $n + 1;
   }
   @if ($animation != false){
+    $sprCount: length($names);
+    $imageFirst: sprite-file($spr, nth($names, 1));
+    $width: _getImageWidth($imageFirst, $scale);
+    $height: _getImageHeight($imageFirst, $scale);
     $animName: #{$sprName}-anim;
-    $posLast: -$sprWidth * ( $n - 1 ) / $n;
+    $leftLast: -$sprWidth * $sprCount / $sprCount;
     @include keyframes($animName){
       0%{ background-position: 0px 0px; }
-      100%{ background-position: $posLast 0px; }
+      100%{ background-position: $leftLast 0px; }
     }
     .#{$sprName}.anim{
       width: $width;
       height: $height;
-      @include animation($duration, $animName, steps($n - 1, end));
+      @include animation($animName $duration steps($sprCount, end) 0s infinite);
     }
   }
 }
@@ -94,14 +105,14 @@
 @mixin _loadSpriteAllNest($spr, $sprName, $scale, $animation, $duration, $inner){
   $sprImage: sprite-url($spr);
   $sprPath: sprite-path($spr);
-  $sprWidth: ceil(image-width($sprPath) * $scale);
-  $sprHeight: ceil(image-height($sprPath) * $scale);
+  $sprWidth: _getImageWidth($sprPath, $scale);
+  $sprHeight: _getImageHeight($sprPath, $scale);
   .#{$sprName}{
     overflow: hidden;
     width: 0;
     height: 0;
     #{$inner}{
-      @if ($inner == "&.before"){
+      @if ($inner == "&:before"){
         content: "";
       }
       background:image-url($sprPath) no-repeat;
@@ -113,46 +124,74 @@
       height: $sprHeight;
     }
   }
-  $n: 0;
-  $width: 0px;
-  $height: 0px;
-  @each $fileName in sprite-names($spr){
-    .#{$sprName}.#{$fileName}{
-      $width: ceil((image-width(sprite-file($spr, $fileName))) * $scale);
-      $height: ceil((image-height(sprite-file($spr, $fileName))) * $scale);
-      width: $width;
-      height: $height;
+  $names: sprite-names($spr);
+  @each $name in $names{
+    .#{$sprName}.#{$name}{
+      $image: sprite-file($spr, $name);
+      width: _getImageWidth($image, $scale);
+      height: _getImageHeight($image, $scale);
       #{$inner}{
-        @include _loadSpriteTransform($spr, $fileName, $scale);
+        @include _loadSpriteTransform($spr, $name, $scale);
       }
     }
-    $n: $n + 1;
   }
   @if ($animation != false){
+    $sprCount: length($names);
+    $imageFirst: sprite-file($spr, nth($names, 1));
+    $width: _getImageWidth($imageFirst, $scale);
+    $height: _getImageHeight($imageFirst, $scale);
     $animName: #{$sprName}-anim;
-    $posLast: -$sprWidth * ( $n - 1 ) / $n;
+    $leftLast: -$sprWidth * $sprCount / $sprCount;
     @include keyframes($animName){
       0%{ @include transform(translateX(0px)); }
-      100%{ @include transform(translateX(#{$posLast})); }
+      100%{ @include transform(translateX(#{$leftLast})); }
     }
     .#{$sprName}.anim{
       width: $width;
       height: $height;
       #{$inner}{
-        @include animation($duration, $animName, steps($n - 1, end));
+        @include animation($animName $duration steps($sprCount, end) 0s infinite);
       }
     }
   }
 }
 
-@mixin _loadSpriteAllDummy($sprPath, $sprName, $scale: 1){
+@mixin _loadSpriteAllDummy($sprPath, $sprName, $scale, $animation, $duration){
   .#{$sprName}{
     display: block;
     text-indent: -9999px;
   }
-  @each $fileName in fileList("src/img/" + $sprPath + "/*.png", false, ".png"){
-    .#{$sprName}.#{$fileName}{
-      @include replaceImage($sprPath + "/" + $fileName + ".png", $scale);
+  $names: fileList("src/img/" + $sprPath + "/*.png", false, ".png");
+  @each $name in $names{
+    .#{$sprName}.#{$name}{
+      @include replaceImage($sprPath + "/" + $name + ".png", $scale);
+    }
+  }
+  @if ($animation != false){
+    $sprCount: length($names);
+    $imageFirst: $sprPath + "/" + nth($names, 1) + ".png";
+    $width: _getImageWidth($imageFirst, $scale);
+    $height: _getImageHeight($imageFirst, $scale);
+    $animName: #{$sprName}-anim;
+    @include keyframes($animName){
+      $i: 0;
+      @each $name in $names{
+        #{$i / $sprCount * 100}#{"%"}{
+          @include backgroundImage($sprPath + "/" + $name + ".png", $scale);
+        }
+        #{($i+1) / $sprCount * 100 - 0.0001}#{"%"}{
+          @include backgroundImage($sprPath + "/" + $name + ".png", $scale);
+        }
+        $i: $i + 1;
+      }
+      100%{
+        @include backgroundImage($sprPath + "/" + nth($names, $sprCount) + ".png", $scale);
+      }
+    }
+    .#{$sprName}.anim{
+      width: $width;
+      height: $height;
+      @include animation($animName $duration linear 0s infinite);
     }
   }
 }
@@ -172,31 +211,11 @@
   }
 }
 
-/*
-    Example usage: 
-    @include animation(10s, 5s, changecolour, linear)
-*/
-
-@mixin animation ($duration, $animation, $easing: ease, $iteration-count: infinite) {
-  -webkit-animation-duration: $duration;
-  -webkit-animation-name: $animation;
-  -webkit-animation-timing-function: $easing;
-  -webkit-animation-iteration-count: $iteration-count;
-
-  -moz-animation-duration: $duration;
-  -moz-animation-name: $animation;
-  -moz-animation-timing-function: $easing;
-  -moz-animation-iteration-count: $iteration-count;
-
-  -o-animation-duration: $duration;
-  -o-animation-name: $animation;
-  -o-animation-timing-function: $easing;
-  -o-animation-iteration-count: $iteration-count;
-
-  animation-duration: $duration;
-  animation-name: $animation;
-  animation-timing-function: $easing;
-  animation-iteration-count: $iteration-count;
+@mixin animation ($property) {
+  -webkit-animation: $property;
+  -moz-animation: $property;
+  -o-animation: $property;
+  animation: $property;
 }
 
 @mixin position($x, $y, $unit: "px", $translate: false){
@@ -211,4 +230,15 @@
       translateY($y_unit)
     );
   }
+}
+
+@mixin trbl-centering($width: auto, $height: auto){
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: $width;
+  height: $height;
 }

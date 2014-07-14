@@ -64,10 +64,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/*
-    Example usage: 
-    @include animation(10s, 5s, changecolour, linear)
-*/
 /* line 1, ../sass/_base.scss */
 .wrapper {
   font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "Meiryo", "メイリオ", Myriad, Helvetica, Arial, sans-serif;
@@ -89,9 +85,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   min-width: 960px;
 }
 
-/* line 61, ../sass/_mixin.scss */
+/* line 73, ../sass/_mixin.scss */
 .spr-smily-background {
-  background: url('../img/smily-sd6e663594b.png?1404495811') no-repeat;
+  background: url('../img/smily-sd6e663594b.png?1404550232') no-repeat;
   background-repeat: no-repeat;
   -webkit-background-size: 455px, 50px;
   -moz-background-size: 455px, 50px;
@@ -101,63 +97,63 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-indent: -9999px;
 }
 
-/* line 72, ../sass/_mixin.scss */
+/* line 82, ../sass/_mixin.scss */
 .spr-smily-background.smily0001 {
   background-position: 0 0;
   width: 50px;
   height: 50px;
 }
 
-/* line 72, ../sass/_mixin.scss */
+/* line 82, ../sass/_mixin.scss */
 .spr-smily-background.smily0002 {
   background-position: -51px 0;
   width: 50px;
   height: 50px;
 }
 
-/* line 72, ../sass/_mixin.scss */
+/* line 82, ../sass/_mixin.scss */
 .spr-smily-background.smily0003 {
   background-position: -101px 0;
   width: 50px;
   height: 50px;
 }
 
-/* line 72, ../sass/_mixin.scss */
+/* line 82, ../sass/_mixin.scss */
 .spr-smily-background.smily0004 {
   background-position: -152px 0;
   width: 50px;
   height: 50px;
 }
 
-/* line 72, ../sass/_mixin.scss */
+/* line 82, ../sass/_mixin.scss */
 .spr-smily-background.smily0005 {
   background-position: -202px 0;
   width: 50px;
   height: 50px;
 }
 
-/* line 72, ../sass/_mixin.scss */
+/* line 82, ../sass/_mixin.scss */
 .spr-smily-background.smily0006 {
   background-position: -253px 0;
   width: 50px;
   height: 50px;
 }
 
-/* line 72, ../sass/_mixin.scss */
+/* line 82, ../sass/_mixin.scss */
 .spr-smily-background.smily0007 {
   background-position: -303px 0;
   width: 50px;
   height: 50px;
 }
 
-/* line 72, ../sass/_mixin.scss */
+/* line 82, ../sass/_mixin.scss */
 .spr-smily-background.smily0008 {
   background-position: -354px 0;
   width: 50px;
   height: 50px;
 }
 
-/* line 72, ../sass/_mixin.scss */
+/* line 82, ../sass/_mixin.scss */
 .spr-smily-background.smily0009 {
   background-position: -404px 0;
   width: 50px;
@@ -165,102 +161,907 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @-webkit-keyframes spr-smily-background-anim {
-  /* line 83, ../sass/_mixin.scss */
+  /* line 94, ../sass/_mixin.scss */
   0% {
     background-position: 0px 0px;
   }
 
-  /* line 84, ../sass/_mixin.scss */
+  /* line 95, ../sass/_mixin.scss */
   100% {
-    background-position: -404.44444px 0px;
+    background-position: -455px 0px;
   }
 }
 
 @-moz-keyframes spr-smily-background-anim {
-  /* line 83, ../sass/_mixin.scss */
+  /* line 94, ../sass/_mixin.scss */
   0% {
     background-position: 0px 0px;
   }
 
-  /* line 84, ../sass/_mixin.scss */
+  /* line 95, ../sass/_mixin.scss */
   100% {
-    background-position: -404.44444px 0px;
+    background-position: -455px 0px;
   }
 }
 
 @-o-keyframes spr-smily-background-anim {
-  /* line 83, ../sass/_mixin.scss */
+  /* line 94, ../sass/_mixin.scss */
   0% {
     background-position: 0px 0px;
   }
 
-  /* line 84, ../sass/_mixin.scss */
+  /* line 95, ../sass/_mixin.scss */
   100% {
-    background-position: -404.44444px 0px;
+    background-position: -455px 0px;
   }
 }
 
 @keyframes spr-smily-background-anim {
-  /* line 83, ../sass/_mixin.scss */
+  /* line 94, ../sass/_mixin.scss */
   0% {
     background-position: 0px 0px;
   }
 
-  /* line 84, ../sass/_mixin.scss */
+  /* line 95, ../sass/_mixin.scss */
   100% {
-    background-position: -404.44444px 0px;
+    background-position: -455px 0px;
   }
 }
 
-/* line 86, ../sass/_mixin.scss */
+/* line 97, ../sass/_mixin.scss */
 .spr-smily-background.anim {
   width: 50px;
   height: 50px;
-  -webkit-animation-duration: 0.02s;
-  -webkit-animation-name: spr-smily-background-anim;
-  -webkit-animation-timing-function: steps(8, end);
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-duration: 0.02s;
-  -moz-animation-name: spr-smily-background-anim;
-  -moz-animation-timing-function: steps(8, end);
-  -moz-animation-iteration-count: infinite;
-  -o-animation-duration: 0.02s;
-  -o-animation-name: spr-smily-background-anim;
-  -o-animation-timing-function: steps(8, end);
-  -o-animation-iteration-count: infinite;
-  animation-duration: 0.02s;
-  animation-name: spr-smily-background-anim;
-  animation-timing-function: steps(8, end);
-  animation-iteration-count: infinite;
+  -webkit-animation: spr-smily-background-anim 1s steps(9, end) 0s infinite;
+  -moz-animation: spr-smily-background-anim 1s steps(9, end) 0s infinite;
+  -o-animation: spr-smily-background-anim 1s steps(9, end) 0s infinite;
+  animation: spr-smily-background-anim 1s steps(9, end) 0s infinite;
 }
 
-/* line 99, ../sass/_mixin.scss */
+/* line 160, ../sass/_mixin.scss */
+.spr-smily-dummy {
+  display: block;
+  text-indent: -9999px;
+}
+
+/* line 166, ../sass/_mixin.scss */
+.spr-smily-dummy.smily0001 {
+  background: url('../img/smily/smily0001.png?1404489911');
+  -webkit-background-size: 50px, 50px;
+  -moz-background-size: 50px, 50px;
+  -o-background-size: 50px, 50px;
+  background-size: 50px, 50px;
+  width: 50px;
+  height: 50px;
+  text-indent: -9999px;
+}
+
+/* line 166, ../sass/_mixin.scss */
+.spr-smily-dummy.smily0002 {
+  background: url('../img/smily/smily0002.png?1404489911');
+  -webkit-background-size: 50px, 50px;
+  -moz-background-size: 50px, 50px;
+  -o-background-size: 50px, 50px;
+  background-size: 50px, 50px;
+  width: 50px;
+  height: 50px;
+  text-indent: -9999px;
+}
+
+/* line 166, ../sass/_mixin.scss */
+.spr-smily-dummy.smily0003 {
+  background: url('../img/smily/smily0003.png?1404489911');
+  -webkit-background-size: 50px, 50px;
+  -moz-background-size: 50px, 50px;
+  -o-background-size: 50px, 50px;
+  background-size: 50px, 50px;
+  width: 50px;
+  height: 50px;
+  text-indent: -9999px;
+}
+
+/* line 166, ../sass/_mixin.scss */
+.spr-smily-dummy.smily0004 {
+  background: url('../img/smily/smily0004.png?1404489911');
+  -webkit-background-size: 50px, 50px;
+  -moz-background-size: 50px, 50px;
+  -o-background-size: 50px, 50px;
+  background-size: 50px, 50px;
+  width: 50px;
+  height: 50px;
+  text-indent: -9999px;
+}
+
+/* line 166, ../sass/_mixin.scss */
+.spr-smily-dummy.smily0005 {
+  background: url('../img/smily/smily0005.png?1404489911');
+  -webkit-background-size: 50px, 50px;
+  -moz-background-size: 50px, 50px;
+  -o-background-size: 50px, 50px;
+  background-size: 50px, 50px;
+  width: 50px;
+  height: 50px;
+  text-indent: -9999px;
+}
+
+/* line 166, ../sass/_mixin.scss */
+.spr-smily-dummy.smily0006 {
+  background: url('../img/smily/smily0006.png?1404489912');
+  -webkit-background-size: 50px, 50px;
+  -moz-background-size: 50px, 50px;
+  -o-background-size: 50px, 50px;
+  background-size: 50px, 50px;
+  width: 50px;
+  height: 50px;
+  text-indent: -9999px;
+}
+
+/* line 166, ../sass/_mixin.scss */
+.spr-smily-dummy.smily0007 {
+  background: url('../img/smily/smily0007.png?1404489912');
+  -webkit-background-size: 50px, 50px;
+  -moz-background-size: 50px, 50px;
+  -o-background-size: 50px, 50px;
+  background-size: 50px, 50px;
+  width: 50px;
+  height: 50px;
+  text-indent: -9999px;
+}
+
+/* line 166, ../sass/_mixin.scss */
+.spr-smily-dummy.smily0008 {
+  background: url('../img/smily/smily0008.png?1404489912');
+  -webkit-background-size: 50px, 50px;
+  -moz-background-size: 50px, 50px;
+  -o-background-size: 50px, 50px;
+  background-size: 50px, 50px;
+  width: 50px;
+  height: 50px;
+  text-indent: -9999px;
+}
+
+/* line 166, ../sass/_mixin.scss */
+.spr-smily-dummy.smily0009 {
+  background: url('../img/smily/smily0009.png?1404489912');
+  -webkit-background-size: 50px, 50px;
+  -moz-background-size: 50px, 50px;
+  -o-background-size: 50px, 50px;
+  background-size: 50px, 50px;
+  width: 50px;
+  height: 50px;
+  text-indent: -9999px;
+}
+
+@-webkit-keyframes spr-smily-dummy-anim {
+  /* line 179, ../sass/_mixin.scss */
+  0% {
+    background: url('../img/smily/smily0001.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  11.11101% {
+    background: url('../img/smily/smily0001.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  11.11111% {
+    background: url('../img/smily/smily0002.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  22.22212% {
+    background: url('../img/smily/smily0002.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  22.22222% {
+    background: url('../img/smily/smily0003.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  33.33323% {
+    background: url('../img/smily/smily0003.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  33.33333% {
+    background: url('../img/smily/smily0004.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  44.44434% {
+    background: url('../img/smily/smily0004.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  44.44444% {
+    background: url('../img/smily/smily0005.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  55.55546% {
+    background: url('../img/smily/smily0005.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  55.55556% {
+    background: url('../img/smily/smily0006.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  66.66657% {
+    background: url('../img/smily/smily0006.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  66.66667% {
+    background: url('../img/smily/smily0007.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  77.77768% {
+    background: url('../img/smily/smily0007.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  77.77778% {
+    background: url('../img/smily/smily0008.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  88.88879% {
+    background: url('../img/smily/smily0008.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  88.88889% {
+    background: url('../img/smily/smily0009.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  99.9999% {
+    background: url('../img/smily/smily0009.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 187, ../sass/_mixin.scss */
+  100% {
+    background: url('../img/smily/smily0009.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+}
+
+@-moz-keyframes spr-smily-dummy-anim {
+  /* line 179, ../sass/_mixin.scss */
+  0% {
+    background: url('../img/smily/smily0001.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  11.11101% {
+    background: url('../img/smily/smily0001.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  11.11111% {
+    background: url('../img/smily/smily0002.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  22.22212% {
+    background: url('../img/smily/smily0002.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  22.22222% {
+    background: url('../img/smily/smily0003.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  33.33323% {
+    background: url('../img/smily/smily0003.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  33.33333% {
+    background: url('../img/smily/smily0004.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  44.44434% {
+    background: url('../img/smily/smily0004.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  44.44444% {
+    background: url('../img/smily/smily0005.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  55.55546% {
+    background: url('../img/smily/smily0005.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  55.55556% {
+    background: url('../img/smily/smily0006.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  66.66657% {
+    background: url('../img/smily/smily0006.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  66.66667% {
+    background: url('../img/smily/smily0007.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  77.77768% {
+    background: url('../img/smily/smily0007.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  77.77778% {
+    background: url('../img/smily/smily0008.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  88.88879% {
+    background: url('../img/smily/smily0008.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  88.88889% {
+    background: url('../img/smily/smily0009.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  99.9999% {
+    background: url('../img/smily/smily0009.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 187, ../sass/_mixin.scss */
+  100% {
+    background: url('../img/smily/smily0009.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+}
+
+@-o-keyframes spr-smily-dummy-anim {
+  /* line 179, ../sass/_mixin.scss */
+  0% {
+    background: url('../img/smily/smily0001.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  11.11101% {
+    background: url('../img/smily/smily0001.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  11.11111% {
+    background: url('../img/smily/smily0002.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  22.22212% {
+    background: url('../img/smily/smily0002.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  22.22222% {
+    background: url('../img/smily/smily0003.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  33.33323% {
+    background: url('../img/smily/smily0003.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  33.33333% {
+    background: url('../img/smily/smily0004.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  44.44434% {
+    background: url('../img/smily/smily0004.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  44.44444% {
+    background: url('../img/smily/smily0005.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  55.55546% {
+    background: url('../img/smily/smily0005.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  55.55556% {
+    background: url('../img/smily/smily0006.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  66.66657% {
+    background: url('../img/smily/smily0006.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  66.66667% {
+    background: url('../img/smily/smily0007.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  77.77768% {
+    background: url('../img/smily/smily0007.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  77.77778% {
+    background: url('../img/smily/smily0008.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  88.88879% {
+    background: url('../img/smily/smily0008.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  88.88889% {
+    background: url('../img/smily/smily0009.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  99.9999% {
+    background: url('../img/smily/smily0009.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 187, ../sass/_mixin.scss */
+  100% {
+    background: url('../img/smily/smily0009.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+}
+
+@keyframes spr-smily-dummy-anim {
+  /* line 179, ../sass/_mixin.scss */
+  0% {
+    background: url('../img/smily/smily0001.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  11.11101% {
+    background: url('../img/smily/smily0001.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  11.11111% {
+    background: url('../img/smily/smily0002.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  22.22212% {
+    background: url('../img/smily/smily0002.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  22.22222% {
+    background: url('../img/smily/smily0003.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  33.33323% {
+    background: url('../img/smily/smily0003.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  33.33333% {
+    background: url('../img/smily/smily0004.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  44.44434% {
+    background: url('../img/smily/smily0004.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  44.44444% {
+    background: url('../img/smily/smily0005.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  55.55546% {
+    background: url('../img/smily/smily0005.png?1404489911');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  55.55556% {
+    background: url('../img/smily/smily0006.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  66.66657% {
+    background: url('../img/smily/smily0006.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  66.66667% {
+    background: url('../img/smily/smily0007.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  77.77768% {
+    background: url('../img/smily/smily0007.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  77.77778% {
+    background: url('../img/smily/smily0008.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  88.88879% {
+    background: url('../img/smily/smily0008.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 179, ../sass/_mixin.scss */
+  88.88889% {
+    background: url('../img/smily/smily0009.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 182, ../sass/_mixin.scss */
+  99.9999% {
+    background: url('../img/smily/smily0009.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+
+  /* line 187, ../sass/_mixin.scss */
+  100% {
+    background: url('../img/smily/smily0009.png?1404489912');
+    -webkit-background-size: 50px, 50px;
+    -moz-background-size: 50px, 50px;
+    -o-background-size: 50px, 50px;
+    background-size: 50px, 50px;
+  }
+}
+
+/* line 191, ../sass/_mixin.scss */
+.spr-smily-dummy.anim {
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spr-smily-dummy-anim 1s linear 0s infinite;
+  -moz-animation: spr-smily-dummy-anim 1s linear 0s infinite;
+  -o-animation: spr-smily-dummy-anim 1s linear 0s infinite;
+  animation: spr-smily-dummy-anim 1s linear 0s infinite;
+}
+
+/* line 110, ../sass/_mixin.scss */
 .spr-smily-translate {
   overflow: hidden;
   width: 0;
   height: 0;
 }
-/* line 103, ../sass/_mixin.scss */
-.spr-smily-translate .inner {
-  background: url('../img/smily-s96700bc9db.png?1404495811') no-repeat;
+/* line 114, ../sass/_mixin.scss */
+.spr-smily-translate:before {
+  content: "";
+  background: url('../img/smily-sd6e663594b.png?1404550232') no-repeat;
   background-repeat: no-repeat;
-  -webkit-background-size: 639px, 50px;
-  -moz-background-size: 639px, 50px;
-  -o-background-size: 639px, 50px;
-  background-size: 639px, 50px;
+  -webkit-background-size: 455px, 50px;
+  -moz-background-size: 455px, 50px;
+  -o-background-size: 455px, 50px;
+  background-size: 455px, 50px;
   display: block;
   text-indent: -9999px;
-  width: 639px;
+  width: 455px;
   height: 50px;
 }
 
-/* line 120, ../sass/_mixin.scss */
+/* line 129, ../sass/_mixin.scss */
 .spr-smily-translate.smily0001 {
   width: 50px;
   height: 50px;
 }
-/* line 125, ../sass/_mixin.scss */
-.spr-smily-translate.smily0001 .inner {
+/* line 133, ../sass/_mixin.scss */
+.spr-smily-translate.smily0001:before {
   -webkit-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
@@ -268,120 +1069,120 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transform: translate(0, 0);
 }
 
-/* line 120, ../sass/_mixin.scss */
+/* line 129, ../sass/_mixin.scss */
 .spr-smily-translate.smily0002 {
   width: 50px;
   height: 50px;
 }
-/* line 125, ../sass/_mixin.scss */
-.spr-smily-translate.smily0002 .inner {
-  -webkit-transform: translate(-71px, 0);
-  -moz-transform: translate(-71px, 0);
-  -ms-transform: translate(-71px, 0);
-  -o-transform: translate(-71px, 0);
-  transform: translate(-71px, 0);
+/* line 133, ../sass/_mixin.scss */
+.spr-smily-translate.smily0002:before {
+  -webkit-transform: translate(-51px, 0);
+  -moz-transform: translate(-51px, 0);
+  -ms-transform: translate(-51px, 0);
+  -o-transform: translate(-51px, 0);
+  transform: translate(-51px, 0);
 }
 
-/* line 120, ../sass/_mixin.scss */
+/* line 129, ../sass/_mixin.scss */
 .spr-smily-translate.smily0003 {
   width: 50px;
   height: 50px;
 }
-/* line 125, ../sass/_mixin.scss */
-.spr-smily-translate.smily0003 .inner {
-  -webkit-transform: translate(-142px, 0);
-  -moz-transform: translate(-142px, 0);
-  -ms-transform: translate(-142px, 0);
-  -o-transform: translate(-142px, 0);
-  transform: translate(-142px, 0);
+/* line 133, ../sass/_mixin.scss */
+.spr-smily-translate.smily0003:before {
+  -webkit-transform: translate(-101px, 0);
+  -moz-transform: translate(-101px, 0);
+  -ms-transform: translate(-101px, 0);
+  -o-transform: translate(-101px, 0);
+  transform: translate(-101px, 0);
 }
 
-/* line 120, ../sass/_mixin.scss */
+/* line 129, ../sass/_mixin.scss */
 .spr-smily-translate.smily0004 {
   width: 50px;
   height: 50px;
 }
-/* line 125, ../sass/_mixin.scss */
-.spr-smily-translate.smily0004 .inner {
-  -webkit-transform: translate(-213px, 0);
-  -moz-transform: translate(-213px, 0);
-  -ms-transform: translate(-213px, 0);
-  -o-transform: translate(-213px, 0);
-  transform: translate(-213px, 0);
+/* line 133, ../sass/_mixin.scss */
+.spr-smily-translate.smily0004:before {
+  -webkit-transform: translate(-152px, 0);
+  -moz-transform: translate(-152px, 0);
+  -ms-transform: translate(-152px, 0);
+  -o-transform: translate(-152px, 0);
+  transform: translate(-152px, 0);
 }
 
-/* line 120, ../sass/_mixin.scss */
+/* line 129, ../sass/_mixin.scss */
 .spr-smily-translate.smily0005 {
   width: 50px;
   height: 50px;
 }
-/* line 125, ../sass/_mixin.scss */
-.spr-smily-translate.smily0005 .inner {
-  -webkit-transform: translate(-284px, 0);
-  -moz-transform: translate(-284px, 0);
-  -ms-transform: translate(-284px, 0);
-  -o-transform: translate(-284px, 0);
-  transform: translate(-284px, 0);
+/* line 133, ../sass/_mixin.scss */
+.spr-smily-translate.smily0005:before {
+  -webkit-transform: translate(-202px, 0);
+  -moz-transform: translate(-202px, 0);
+  -ms-transform: translate(-202px, 0);
+  -o-transform: translate(-202px, 0);
+  transform: translate(-202px, 0);
 }
 
-/* line 120, ../sass/_mixin.scss */
+/* line 129, ../sass/_mixin.scss */
 .spr-smily-translate.smily0006 {
   width: 50px;
   height: 50px;
 }
-/* line 125, ../sass/_mixin.scss */
-.spr-smily-translate.smily0006 .inner {
-  -webkit-transform: translate(-355px, 0);
-  -moz-transform: translate(-355px, 0);
-  -ms-transform: translate(-355px, 0);
-  -o-transform: translate(-355px, 0);
-  transform: translate(-355px, 0);
+/* line 133, ../sass/_mixin.scss */
+.spr-smily-translate.smily0006:before {
+  -webkit-transform: translate(-253px, 0);
+  -moz-transform: translate(-253px, 0);
+  -ms-transform: translate(-253px, 0);
+  -o-transform: translate(-253px, 0);
+  transform: translate(-253px, 0);
 }
 
-/* line 120, ../sass/_mixin.scss */
+/* line 129, ../sass/_mixin.scss */
 .spr-smily-translate.smily0007 {
   width: 50px;
   height: 50px;
 }
-/* line 125, ../sass/_mixin.scss */
-.spr-smily-translate.smily0007 .inner {
-  -webkit-transform: translate(-426px, 0);
-  -moz-transform: translate(-426px, 0);
-  -ms-transform: translate(-426px, 0);
-  -o-transform: translate(-426px, 0);
-  transform: translate(-426px, 0);
+/* line 133, ../sass/_mixin.scss */
+.spr-smily-translate.smily0007:before {
+  -webkit-transform: translate(-303px, 0);
+  -moz-transform: translate(-303px, 0);
+  -ms-transform: translate(-303px, 0);
+  -o-transform: translate(-303px, 0);
+  transform: translate(-303px, 0);
 }
 
-/* line 120, ../sass/_mixin.scss */
+/* line 129, ../sass/_mixin.scss */
 .spr-smily-translate.smily0008 {
   width: 50px;
   height: 50px;
 }
-/* line 125, ../sass/_mixin.scss */
-.spr-smily-translate.smily0008 .inner {
-  -webkit-transform: translate(-497px, 0);
-  -moz-transform: translate(-497px, 0);
-  -ms-transform: translate(-497px, 0);
-  -o-transform: translate(-497px, 0);
-  transform: translate(-497px, 0);
+/* line 133, ../sass/_mixin.scss */
+.spr-smily-translate.smily0008:before {
+  -webkit-transform: translate(-354px, 0);
+  -moz-transform: translate(-354px, 0);
+  -ms-transform: translate(-354px, 0);
+  -o-transform: translate(-354px, 0);
+  transform: translate(-354px, 0);
 }
 
-/* line 120, ../sass/_mixin.scss */
+/* line 129, ../sass/_mixin.scss */
 .spr-smily-translate.smily0009 {
   width: 50px;
   height: 50px;
 }
-/* line 125, ../sass/_mixin.scss */
-.spr-smily-translate.smily0009 .inner {
-  -webkit-transform: translate(-568px, 0);
-  -moz-transform: translate(-568px, 0);
-  -ms-transform: translate(-568px, 0);
-  -o-transform: translate(-568px, 0);
-  transform: translate(-568px, 0);
+/* line 133, ../sass/_mixin.scss */
+.spr-smily-translate.smily0009:before {
+  -webkit-transform: translate(-404px, 0);
+  -moz-transform: translate(-404px, 0);
+  -ms-transform: translate(-404px, 0);
+  -o-transform: translate(-404px, 0);
+  transform: translate(-404px, 0);
 }
 
 @-webkit-keyframes spr-smily-translate-anim {
-  /* line 135, ../sass/_mixin.scss */
+  /* line 146, ../sass/_mixin.scss */
   0% {
     -webkit-transform: translateX(0px);
     -moz-transform: translateX(0px);
@@ -390,18 +1191,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     transform: translateX(0px);
   }
 
-  /* line 136, ../sass/_mixin.scss */
+  /* line 147, ../sass/_mixin.scss */
   100% {
-    -webkit-transform: translateX(-568px);
-    -moz-transform: translateX(-568px);
-    -ms-transform: translateX(-568px);
-    -o-transform: translateX(-568px);
-    transform: translateX(-568px);
+    -webkit-transform: translateX(-455px);
+    -moz-transform: translateX(-455px);
+    -ms-transform: translateX(-455px);
+    -o-transform: translateX(-455px);
+    transform: translateX(-455px);
   }
 }
 
 @-moz-keyframes spr-smily-translate-anim {
-  /* line 135, ../sass/_mixin.scss */
+  /* line 146, ../sass/_mixin.scss */
   0% {
     -webkit-transform: translateX(0px);
     -moz-transform: translateX(0px);
@@ -410,18 +1211,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     transform: translateX(0px);
   }
 
-  /* line 136, ../sass/_mixin.scss */
+  /* line 147, ../sass/_mixin.scss */
   100% {
-    -webkit-transform: translateX(-568px);
-    -moz-transform: translateX(-568px);
-    -ms-transform: translateX(-568px);
-    -o-transform: translateX(-568px);
-    transform: translateX(-568px);
+    -webkit-transform: translateX(-455px);
+    -moz-transform: translateX(-455px);
+    -ms-transform: translateX(-455px);
+    -o-transform: translateX(-455px);
+    transform: translateX(-455px);
   }
 }
 
 @-o-keyframes spr-smily-translate-anim {
-  /* line 135, ../sass/_mixin.scss */
+  /* line 146, ../sass/_mixin.scss */
   0% {
     -webkit-transform: translateX(0px);
     -moz-transform: translateX(0px);
@@ -430,18 +1231,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     transform: translateX(0px);
   }
 
-  /* line 136, ../sass/_mixin.scss */
+  /* line 147, ../sass/_mixin.scss */
   100% {
-    -webkit-transform: translateX(-568px);
-    -moz-transform: translateX(-568px);
-    -ms-transform: translateX(-568px);
-    -o-transform: translateX(-568px);
-    transform: translateX(-568px);
+    -webkit-transform: translateX(-455px);
+    -moz-transform: translateX(-455px);
+    -ms-transform: translateX(-455px);
+    -o-transform: translateX(-455px);
+    transform: translateX(-455px);
   }
 }
 
 @keyframes spr-smily-translate-anim {
-  /* line 135, ../sass/_mixin.scss */
+  /* line 146, ../sass/_mixin.scss */
   0% {
     -webkit-transform: translateX(0px);
     -moz-transform: translateX(0px);
@@ -450,140 +1251,31 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     transform: translateX(0px);
   }
 
-  /* line 136, ../sass/_mixin.scss */
+  /* line 147, ../sass/_mixin.scss */
   100% {
-    -webkit-transform: translateX(-568px);
-    -moz-transform: translateX(-568px);
-    -ms-transform: translateX(-568px);
-    -o-transform: translateX(-568px);
-    transform: translateX(-568px);
+    -webkit-transform: translateX(-455px);
+    -moz-transform: translateX(-455px);
+    -ms-transform: translateX(-455px);
+    -o-transform: translateX(-455px);
+    transform: translateX(-455px);
   }
 }
 
-/* line 138, ../sass/_mixin.scss */
+/* line 149, ../sass/_mixin.scss */
 .spr-smily-translate.anim {
   width: 50px;
   height: 50px;
 }
-/* line 141, ../sass/_mixin.scss */
-.spr-smily-translate.anim .inner {
-  -webkit-animation-duration: 0.02s;
-  -webkit-animation-name: spr-smily-translate-anim;
-  -webkit-animation-timing-function: steps(8, end);
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-duration: 0.02s;
-  -moz-animation-name: spr-smily-translate-anim;
-  -moz-animation-timing-function: steps(8, end);
-  -moz-animation-iteration-count: infinite;
-  -o-animation-duration: 0.02s;
-  -o-animation-name: spr-smily-translate-anim;
-  -o-animation-timing-function: steps(8, end);
-  -o-animation-iteration-count: infinite;
-  animation-duration: 0.02s;
-  animation-name: spr-smily-translate-anim;
-  animation-timing-function: steps(8, end);
-  animation-iteration-count: infinite;
+/* line 152, ../sass/_mixin.scss */
+.spr-smily-translate.anim:before {
+  -webkit-animation: spr-smily-translate-anim 1s steps(9, end) 0s infinite;
+  -moz-animation: spr-smily-translate-anim 1s steps(9, end) 0s infinite;
+  -o-animation: spr-smily-translate-anim 1s steps(9, end) 0s infinite;
+  animation: spr-smily-translate-anim 1s steps(9, end) 0s infinite;
 }
 
-@-webkit-keyframes anim-rotate {
-  /* line 20, ../sass/_sprite.scss */
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  /* line 21, ../sass/_sprite.scss */
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@-moz-keyframes anim-rotate {
-  /* line 20, ../sass/_sprite.scss */
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  /* line 21, ../sass/_sprite.scss */
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@-o-keyframes anim-rotate {
-  /* line 20, ../sass/_sprite.scss */
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  /* line 21, ../sass/_sprite.scss */
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes anim-rotate {
-  /* line 20, ../sass/_sprite.scss */
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  /* line 21, ../sass/_sprite.scss */
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-/* line 24, ../sass/_sprite.scss */
-.smily-wrapper {
-  -webkit-animation-duration: 5s;
-  -webkit-animation-name: anim-rotate;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-duration: 5s;
-  -moz-animation-name: anim-rotate;
-  -moz-animation-timing-function: ease;
-  -moz-animation-iteration-count: infinite;
-  -o-animation-duration: 5s;
-  -o-animation-name: anim-rotate;
-  -o-animation-timing-function: ease;
-  -o-animation-iteration-count: infinite;
-  animation-duration: 5s;
-  animation-name: anim-rotate;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-  position: absolute;
-  width: 50px;
-  height: 50px;
+/* line 22, ../sass/_sprite.scss */
+#top {
+  width: 100px;
+  height: 100px;
 }

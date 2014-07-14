@@ -25,8 +25,8 @@ Animation.prototype = {
       _draw(t/duration);
       //call next draw
       if(dis.playing && timeStamp === dis.timeStamp){
-        //requestAnimationFrame(draw);
-        setTimeout(draw, 30);
+        requestAnimationFrame(draw);
+        //setTimeout(draw, 30);
       }
     };
     var repeat = this.repeat;

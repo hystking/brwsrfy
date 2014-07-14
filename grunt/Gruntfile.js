@@ -43,7 +43,7 @@ module.exports = function(grunt){
       },
       release: {
         options: {
-          data: function(){return require("./"+src_root+"jade/setting.json");},
+          data: function(){return require("./jade_setting.json");},
           pretty: true
         },
         cwd: src_root+"jade/",

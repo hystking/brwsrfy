@@ -20,11 +20,11 @@
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
     <!--time stamp-->
     <!--style sheets-->
-    <link href="css/style.css?1404494814936" rel="stylesheet">
+    <link href="css/style.css?1404573142994" rel="stylesheet">
     <!--scripts-->
     <script src="js/lib/html5shiv.min.js"></script>
     <script src="js/lib/jquery-1.11.0.min.js"></script>
-    <script src="js/app.js?1404494814936"></script>
+    <script src="js/app.js?1404573142994"></script>
     <!--viewport-->
     <!--meta(name="viewport", content="initial-scale=1.0, width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0")-->
   </head>
@@ -32,18 +32,22 @@
     <div id="wrapper" class="wrapper">
       <header id="header"></header>
       <section id="top" class="page">
-        <div id="prototype-background" class="smily-wrapper">
-          <div class="spr-smily-background smily anim"></div>
+        <!--.smily-wrapper#prototype-background-->
+        <div class="spr-smily-background smily anim"></div>
+        <div class="spr-smily-dummy smily anim"></div>
+        <div class="spr-smily-translate smily anim"></div>
+        <!--.inner
+        -->
+        <div class="social-buttons">
+          <div class="fb"><div class="fb-like" data-href="http://www.google.com/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div></div>
+          <div class="tw"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.google.com/" data-text="" data-lang="ja">ツイート</a></div>
+          <div class="htn"><a href="http://b.hatena.ne.jp/entry/http://www.google.com/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a></div>
+          <div class="gp"><div class="g-plusone" data-size="medium" data-href="http://www.google.com/"></div></div>
+          <div class="line"><span><script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140411" ></script><script type="text/javascript">new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a","text":"http://www.google.com/","withUrl":true});</script></span></div>
         </div>
-        <div id="prototype-translate" class="smily-wrapper">
-          <div class="spr-smily-translate smily anim">
-            <div class="inner"></div>
-          </div>
-        </div>
-        <!--+socialButtons()-->
       </section>
       <div id="fb-root">
-        <script>
+        <script async>
           (function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
@@ -54,10 +58,10 @@
         </script>
       </div>
       <div id="tw-root">
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <script async>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       </div>
       <div id="gp-root">
-        <script type="text/javascript">
+        <script type="text/javascript" async>
           window.___gcfg = {lang: 'ja'};
           (function() {
           var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
@@ -67,7 +71,7 @@
         </script>
       </div>
       <div id="htn_root">
-        <script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        <script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async></script>
       </div>
     </div>
   </body>
