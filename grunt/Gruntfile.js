@@ -1,3 +1,5 @@
+var ns = this;
+
 module.exports = function(grunt){
   var port = 9000;
   var hostname = "172.21.32.73";
@@ -29,30 +31,39 @@ module.exports = function(grunt){
        ----- JADE -----
     */
 
-    jade: {
-      debug: {
-        options: {
-          data: function(){return require("./jade_setting.json");},
-          pretty: true
+    jade: (function(){
+      var jade_data = function(){
+        return require("./jade_setting.json");
+      };
+      var jade_cwd = src_root + "jade/";
+      var jade_src = ["[^_]*.jade"];
+      var jade_dest = src_root+"html/";
+      var jade_ext = ".html";
+      return {
+        debug: {
+          options: {
+            data: jade_data,
+            pretty: true
+            },
+          expand: true,
+          cwd: jade_cwd,
+          src: jade_src,
+          dest: jade_dest,
+          ext: jade_ext
         },
-        cwd: src_root+"jade/",
-        expand: true,
-        src: ["[^_]*.jade"],
-        dest: src_root+"html/",
-        ext: ".html",
-      },
-      release: {
-        options: {
-          data: function(){return require("./jade_setting.json");},
-          pretty: true
-        },
-        cwd: src_root+"jade/",
-        expand: true,
-        src: ["[^_]*.jade"],
-        dest: src_root+"html/",
-        ext: ".html",
-      }
-    },
+        release: {
+          options: {
+            data: jade_data,
+            pretty: true
+          },
+          expand: true,
+          cwd: jade_cwd,
+          src: jade_src,
+          dest: jade_dest,
+          ext: jade_ext
+        }
+      };
+    })(),
 
     /*
        ----- JSHINT -----
@@ -66,13 +77,17 @@ module.exports = function(grunt){
        ----- BROWSERIFY -----
     */
 
+    browserify_params: (function(){
+      ns.browserify_src = [src_root+"js/main.js"];
+    })(),
+
     browserify: {
       debug:{
-        src: [src_root+"js/main.js"],
+        src: ns.browserify_src,
         dest: debug_root+"js/app.js"
       },
       release:{
-        src: [src_root+"js/main.js"],
+        src: ns.browserify_src,
         dest: release_root+"js/app.js"
       }
     },
