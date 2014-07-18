@@ -47,4 +47,4 @@ Animation.prototype = {
   }
 };
 
-exports.Animation = Animation;
+module.exports = Animation;

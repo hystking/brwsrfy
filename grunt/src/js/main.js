@@ -1,7 +1,7 @@
-var Easing = require("./app/Easing").Easing;
-var Animation = require("./app/Animation").Animation;
-var Transform = require("./app/Transform").Transform;
-var SpriteAnimation = require("./app/SpriteAnimation").SpriteAnimation;
+var Easing = require("./app/Easing");
+var Animation = require("./app/Animation");
+var Transform = require("./app/Transform");
+var SpriteAnimation = require("./app/SpriteAnimation");
 /*
 $(this).ready(function(){
   var body = $("body");
@@ -33,7 +33,6 @@ $(this).ready(function(){
   //new SpriteAnimation($smily, "f", 60, 30, true).start();
 //});
 window.onload = function(){
-  /*
   var i;
   var prototypeBackground = document.getElementById("prototype-background");
   var prototypeTranslate = document.getElementById("prototype-translate");
@@ -76,5 +75,4 @@ window.onload = function(){
   }
   prototypeBackground.style.display = "none";
   prototypeTranslate.style.display = "none";
-  */
 };

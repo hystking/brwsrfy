@@ -1,19 +1,14 @@
-var ns = this;
-
 module.exports = function(grunt){
-  var port = 9000;
   var hostname = "172.21.32.73";
+  var port = 9000;
   var src_root = "src/";
   var debug_root = "../debug/";
-  var release_root = "../release/";
-
+  var release_root = "../htdocs/";
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
-
     /*
        ----- COMPASS -----
     */
-
     compass: {
       debug: {
         options: {
@@ -26,71 +21,19 @@ module.exports = function(grunt){
         }
       }
     },
-
     /*
        ----- JADE -----
     */
-
-    jade: (function(){
-      var jade_data = function(){
-        return require("./jade_setting.json");
-      };
-      var jade_cwd = src_root + "jade/";
-      var jade_src = ["[^_]*.jade"];
-      var jade_dest = src_root+"html/";
-      var jade_ext = ".html";
-      return {
-        debug: {
-          options: {
-            data: jade_data,
-            pretty: true
-            },
-          expand: true,
-          cwd: jade_cwd,
-          src: jade_src,
-          dest: jade_dest,
-          ext: jade_ext
-        },
-        release: {
-          options: {
-            data: jade_data,
-            pretty: true
-          },
-          expand: true,
-          cwd: jade_cwd,
-          src: jade_src,
-          dest: jade_dest,
-          ext: jade_ext
-        }
-      };
-    })(),
-
+    jade: require("./grunt_settings/jade")(src_root, debug_root, release_root),
     /*
        ----- JSHINT -----
     */
-    
-    jshint: {
-      cwd: src_root+"js/app/"
-    },
+    jshint: {cwd: src_root+"js/app/"},
 
     /*
        ----- BROWSERIFY -----
     */
-
-    browserify_params: (function(){
-      ns.browserify_src = [src_root+"js/main.js"];
-    })(),
-
-    browserify: {
-      debug:{
-        src: ns.browserify_src,
-        dest: debug_root+"js/app.js"
-      },
-      release:{
-        src: ns.browserify_src,
-        dest: release_root+"js/app.js"
-      }
-    },
+    browserify: require("./grunt_settings/browserify")(src_root, debug_root, release_root),
 
     /*
        ----- CLEAN -----
@@ -104,88 +47,7 @@ module.exports = function(grunt){
     /*
        ----- COPY -----
     */
-
-    copy: {
-      debug_favicon: {
-        expand: true,
-        cwd: src_root,
-        src: "*.ico",
-        dest: debug_root
-      },
-      debug_html: {
-        expand: true,
-        cwd: src_root+"html/",
-        src: [
-          "**/*.html"
-        ],
-        dest: debug_root
-      },
-      debug_css: {
-        expand: true,
-        cwd: src_root,
-        src: "css/**/*.css",
-        dest: debug_root,
-      },
-      debug_js: {
-        expand: true,
-        cwd: src_root,
-        src: [
-          "js/lib/**/*.js"
-        ],
-        dest: debug_root
-      },
-      debug_img: {
-        expand: true,
-        cwd: src_root,
-        src: [
-          "img/**/*.png",
-          "img/**/*.jpeg",
-          "img/**/*.jpg",
-          "img/**/*.gif"
-        ],
-        dest: debug_root,
-      },
-      //----------------------------------------------------------------
-      release_favicon: {
-        expand: true,
-        cwd: src_root,
-        src: "*.ico",
-        dest: release_root
-      },
-      release_html: {
-        expand: true,
-        cwd: src_root+"html/",
-        src: [
-          "**/*.html"
-        ],
-        dest: release_root
-      },
-      release_css: {
-        expand: true,
-        cwd: src_root,
-        src: "css/**/*.css",
-        dest: release_root,
-      },
-      release_js: {
-        expand: true,
-        cwd: src_root,
-        src: [
-          "js/lib/**/*.js"
-        ],
-        dest: release_root
-      },
-      release_img: {
-        expand: true,
-        cwd: src_root,
-        src: [
-          "img/**/*.png",
-          "img/**/*.jpeg",
-          "img/**/*.jpg",
-          "img/**/*.gif"
-        ],
-        dest: release_root,
-      }
-    },
+    copy: require("./grunt_settings/copy")(src_root, debug_root, release_root),
 
     /*
        ----- CONNECT -----
@@ -216,32 +78,11 @@ module.exports = function(grunt){
        ----- WATCH -----
     */
 
-    watch: {
-      options: {
-        livereload: true
-      },
-      sass: {
-        files: [
-          src_root+"sass/**/*.scss",
-          src_root+"sass/**/_*.scss"
-        ],
-        tasks: ["compass:debug","copy:debug_css", "copy:debug_img"]
-      },
-      jade: {
-        files: [
-          src_root+"jade/**/*.jade",
-          "jade_setting.json"
-        ],
-        tasks: ["jade:debug", "copy:debug_html"]
-      },
-      js: {
-        files: [
-          src_root+"js/app/*.js",
-          src_root+"js/main.js"
-        ],
-        tasks: ["jshint", "browserify:debug", "copy:debug_js"]
-      }
-    },
+    watch: require("./grunt_settings/watch")(src_root, debug_root, release_root),
+
+    /*
+       ----- PNGMIN -----
+    */
 
     pngmin: {
       release: {
@@ -295,6 +136,7 @@ module.exports = function(grunt){
     "copy:release_html",
     "pngmin:release"
   ];
+
   var watch_tasks = [
     "connect:debug",
     "open:browser",

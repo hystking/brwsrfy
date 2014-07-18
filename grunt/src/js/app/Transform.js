@@ -88,4 +88,4 @@ Transform.prototype = {
   }
 };
 
-exports.Transform = Transform;
+module.exports = Transform;

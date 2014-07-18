@@ -1,4 +1,4 @@
-exports.Easing = {
+module.exports = {
   "easeIn": function(t){
     return t * t;
   },
@@ -36,17 +36,15 @@ exports.Easing = {
       return t / 0.5;
     }
     return (1 - t) / 0.5;
-  }
-};
-exports.Easing2D = {
-  "bezier3": function(x1, y1, x2, y2, x3, y3, t){
+  },
+  "bezier2d3": function(x1, y1, x2, y2, x3, y3, t){
     var t_ = 1-t;
     return [
       x1*t_*t_ + x2*2*t_*t + x3*t*t,
       y1*t_*t_ + y2*2*t_*t + y3*t*t
         ];
   },
-  "bezier4": function(x1, y1, x2, y2, x3, y3, x4, y4, t){
+  "bezier2d4": function(x1, y1, x2, y2, x3, y3, x4, y4, t){
     var t_ = 1-t;
     return [
       x1*t_*t_*t_ + x2*3*t_*t_*t + x3*3*t_*t*t + x4*t*t*t,
