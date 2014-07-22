@@ -1,5 +1,6 @@
 node_modules
 debug
 release
+htdocs
 *.sass-cache*
 *.swp
