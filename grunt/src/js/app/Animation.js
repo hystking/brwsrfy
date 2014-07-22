@@ -11,7 +11,7 @@ Animation.prototype = {
   "_start": function(timeStamp, callback){
     var draw = function(){
       // calc t
-      t = +new Date() - timeStamp;
+      t = Date.now() - timeStamp;
       if(repeat){
         t = t % duration;
       }
